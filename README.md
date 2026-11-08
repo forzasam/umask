@@ -7,7 +7,7 @@ A static HTML/CSS/JavaScript site ready for Cloudflare Pages.
 The homepage now explains the product without diagrams, oversized cards, flow arrows, or repeated banners:
 
 - **How it works**: three steps covering `/setup`, `/issue`, `/receive`, `/authenticate` and `/signout`.
-- **Role setup**: one concise list of the bot's requirements (`Manage Roles`, matching role permissions, role hierarchy).
+- **Role setup**: one concise list of the bot's requirements (`Manage Roles` and role hierarchy only).
 - **Security limits**: one understated note rather than a full marketing section.
 - **Install + Support**: both remain prominent in the header and hero; no repeated closing call-to-action.
 
