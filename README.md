@@ -21,3 +21,29 @@ The existing wordmark, Privacy Policy, Terms and `config.js` integration are pre
 4. Check links, mobile layout and privacy/terms pages after deployment.
 
 No build step or external frontend dependencies. Never upload a bot token or an encryption key to a static site.
+
+## Data requests (new)
+
+`data-request.html` offers a concise privacy-request form linked from the
+Privacy Policy and footer. It prepares an email addressed to
+`support@umask.app`. **The form does not send data directly.** Visitors must
+send the draft from their own email client. There is a copy-text fallback,
+and users can alternatively open a **private** ticket in the support server.
+
+This choice avoids adding a new backend and sensitive form-submission storage
+to a static Cloudflare Pages website. The form is not an identity-verification
+system and must never trigger automatic data deletion.
+
+Before deploying:
+
+- Preserve your LIVE `config.js` with install and support links. The packaged
+  example has placeholders; `contactEmail` is already `support@umask.app`.
+- Verify you can receive mail through Cloudflare Email Routing at
+  `support@umask.app`, and that the support server actually has private tickets.
+- **Deploy the bot update first**, and check daily cleanup and local snapshots
+  before publishing a Privacy Policy that describes them as implemented.
+- Confirm operator identity, effective dates, lawful basis, provider regions,
+  provider log retention and international transfer information. `legalReady`
+  stays false until these matters are reviewed. See `LEGAL_NOTES.md`.
+
+No sensitive credentials or bot/database files belong in Cloudflare Pages.
