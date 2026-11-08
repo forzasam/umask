@@ -4,9 +4,9 @@
  * NEVER put your Discord bot token, encryption key, or other secrets here.
  */
 window.UMASK_CONFIG = Object.freeze({
-  botInstallUrl: "",       // e.g. https://discord.com/oauth2/authorize?client_id=...&permissions=...&scope=bot%20applications.commands
-  supportInviteUrl: "",   // e.g. https://discord.gg/your-invite
-  contactEmail: "",       // privacy/support contact, e.g. privacy@your-domain.example
-  operatorName: "",       // individual or organisation responsible for Umask
-  legalReady: false        // set true ONLY after you review and finalise both legal pages
+  botInstallUrl: "https://discord.com/oauth2/authorize?client_id=1568811723626905734&permissions=268435456&integration_type=0&scope=bot+applications.commands",       // e.g. https://discord.com/oauth2/authorize?client_id=...&permissions=...&scope=bot%20applications.commands
+  supportInviteUrl: "https://discord.gg/6HKHYqzYTD",   // e.g. https://discord.gg/your-invite
+  contactEmail: "support@umask.app",       // privacy/support contact, e.g. privacy@your-domain.example
+  operatorName: "umask",       // individual or organisation responsible for Umask
+  legalReady: true        // set true ONLY after you review and finalise both legal pages
 });
