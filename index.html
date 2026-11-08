@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090910">
+  <meta name="description" content="umask provides temporary, authenticated elevated roles for Discord staff. Your roles, your permissions — only when they're needed.">
+  <title>umask — Elevated permissions, only when they're needed.</title>
+  <link rel="icon" href="/assets/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/config.js" defer></script>
+  <script src="/site.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container navrow">
+      <a class="brand" href="/" aria-label="umask home"><img src="/assets/umask-wordmark.webp" alt="umask" width="126" height="40"></a>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="#how-it-works">How it works</a>
+        <a href="#permissions">Role setup</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-small btn-quiet" data-link="support" href="#contact">Join support server <span aria-hidden="true">↗</span></a>
+        <a class="btn btn-small btn-primary" data-link="install" href="#install">Add to Discord <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <p class="hero-overline">Discord / temporary staff access</p>
+        <h1 id="hero-title">Elevated permissions,<br>only when they're <span>needed.</span></h1>
+        <p class="hero-copy">umask gives staff the elevated role you choose after authentication, then removes it when their session ends. Your roles and their permissions stay under your control.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary btn-large" data-link="install" href="#install">Add to Discord <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-quiet btn-large" data-link="support" href="#contact">Join support server <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="hero-footnote">Free to use. Guided setup. No Administrator permission required.</p>
+      </div>
+    </section>
+
+    <section class="section" id="how-it-works" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-index">01 / HOW IT WORKS</p>
+          <h2 id="how-title">Three steps, all in Discord.</h2>
+          <p class="intro">No external dashboard or account to manage.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <span class="step-number">01</span>
+            <h3>Choose the role.</h3>
+            <p>The owner uses <code>/setup</code> to select the staff role, elevated role and allowed session lengths.</p>
+          </article>
+          <article class="step">
+            <span class="step-number">02</span>
+            <h3>Issue a code.</h3>
+            <p>Each staff member receives a unique, owner-issued phrase through <code>/issue</code> and <code>/receive</code>.</p>
+          </article>
+          <article class="step">
+            <span class="step-number">03</span>
+            <h3>Authenticate.</h3>
+            <p>Staff use <code>/authenticate</code> when needed. Their elevated role is removed on sign-out or expiry.</p>
+          </article>
+        </div>
+        <details class="guide-drawer">
+          <summary>View the full workflow <span aria-hidden="true">↗</span></summary>
+          <img src="/assets/workflow.webp" width="1520" height="855" loading="lazy" alt="Illustrated workflow showing owner issuance, staff collection and authentication, active access and session expiry.">
+        </details>
+      </div>
+    </section>
+
+    <section class="section section-separator" id="permissions" aria-labelledby="permissions-title">
+      <div class="container detail-layout">
+        <div>
+          <p class="section-index">02 / ROLE SETUP</p>
+          <h2 id="permissions-title">Your permissions.<br>Our timing.</h2>
+        </div>
+        <div class="detail-content">
+          <p>Set the elevated role's permissions yourself. umask only assigns and removes that role for authorised staff members.</p>
+          <p>The bot needs <strong>Manage Roles</strong> and the permissions of the elevated role. Place its role directly above the elevated role in Discord's role hierarchy—no higher than necessary.</p>
+          <p>It does not require Administrator or access to ordinary message content.</p>
+          <details class="guide-drawer">
+            <summary>View the role setup guide <span aria-hidden="true">↗</span></summary>
+            <img src="/assets/role-setup.webp" width="1520" height="855" loading="lazy" alt="Role setup guide: umask bot role above the elevated-permissions role, with Manage Roles enabled.">
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-separator" id="questions" aria-labelledby="questions-title">
+      <div class="container detail-layout">
+        <div>
+          <p class="section-index">03 / GOOD TO KNOW</p>
+          <h2 id="questions-title">Clear limits.<br>No big promises.</h2>
+        </div>
+        <div class="detail-content">
+          <p>umask reduces the time powerful staff permissions are available. It doesn't stop misuse during an active session, and it can't protect a phrase that's been stolen.</p>
+          <p>If umask goes offline unexpectedly, Discord may retain active elevated roles beyond their intended expiry. The bot checks and reconciles sessions when it reconnects.</p>
+          <a class="inline-link" href="/privacy.html">Read our Privacy Policy <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" id="install" aria-labelledby="closing-title">
+      <div class="container closing-inner">
+        <div>
+          <p class="section-index">GET STARTED</p>
+          <h2 id="closing-title">Set it up in minutes.</h2>
+          <p>Give staff access when they need it—not around the clock.</p>
+        </div>
+        <div class="closing-actions">
+          <a class="btn btn-primary" data-link="install" href="#install">Add to Discord <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-quiet" data-link="support" href="#contact">Join support server <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-inner">
+      <div class="footer-brand"><a href="/" aria-label="umask home"><img src="/assets/umask-wordmark.webp" alt="umask" width="108" height="34"></a><p>© <span data-year>2026</span> umask.</p></div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/terms.html">Terms</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="#contact" data-link="support">Support server ↗</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
