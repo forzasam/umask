@@ -1,32 +1,23 @@
-# umask — minimalist website update
+# umask — simplified homepage
 
-A static, Cloudflare Pages-ready website for the umask Discord bot.
+A static HTML/CSS/JavaScript site ready for Cloudflare Pages.
 
-## What changed
+## What's changed
 
-- Headline: **Elevated permissions, only when they're needed.**
-- **Add to Discord** and **Join support server** are both prominent in the header, hero and final CTA.
-- Removed decorative hero logomark, glowing rings, floating labels, feature cards and other ornamental UI.
-- More restrained dark/lavender style, with a transparent wordmark asset.
-- The site introduces the service in three steps, explains minimum role requirements, and links to the two original illustrated guides within expandable sections.
-- Terms, Privacy and Cloudflare deployment support preserved.
+The homepage now explains the product without diagrams, oversized cards, flow arrows, or repeated banners:
+
+- **How it works**: three steps covering `/setup`, `/issue`, `/receive`, `/authenticate` and `/signout`.
+- **Role setup**: one concise list of the bot's requirements (`Manage Roles`, matching role permissions, role hierarchy).
+- **Security limits**: one understated note rather than a full marketing section.
+- **Install + Support**: both remain prominent in the header and hero; no repeated closing call-to-action.
+
+The existing wordmark, Privacy Policy, Terms and `config.js` integration are preserved.
 
 ## Deploy to Cloudflare Pages
 
-1. Unzip this archive and update **config.js** with your official Discord application install URL and support-server invite URL. If you have already configured these links on your live site, **carry over that existing config.js** before deployment. The included version has placeholders.
-2. Review `terms.html` and `privacy.html` and add operator/contact details. They are drafts and need to reflect your real service operations and data policies before public launch.
-3. Deploy the contents of the folder (with `index.html` at the root) to Cloudflare Pages as a new Direct Upload deployment or commit them to the linked Git repo. You can upload the ZIP for Direct Upload.
-4. Confirm both header/hero buttons open the intended URLs, and review the legal pages on your domain.
+1. If your live site has working bot-install and support URLs, **copy its existing `config.js` into this directory** before deploying. This archive contains placeholder link settings.
+2. Review `terms.html` and `privacy.html` before a public release. Fill in the operator name, contact and legal details.
+3. Upload the ZIP contents to your Cloudflare Pages project (or push the updated files to your connected Git repository). `index.html` must be at the web root.
+4. Check links, mobile layout and privacy/terms pages after deployment.
 
-**Never include a Discord bot token or any authentication secrets in these website files.** `config.js` is public browser-side JavaScript.
-
-## Files
-
-- `index.html` — main landing page
-- `style.css` — all layout and visual styling, including mobile styles
-- `config.js` — public install/support links and legal contact settings
-- `site.js` — link activation, missing-link messages and legal-page contact display
-- `terms.html` and `privacy.html` — existing draft legal pages
-- `assets/` — wordmark, favicon and guides
-
-No build tools, external fonts or client frameworks are required.
+No build step or external frontend dependencies. Never upload a bot token or an encryption key to a static site.
