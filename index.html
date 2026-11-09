@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#090910">
-  <meta name="description" content="umask provides temporary, authenticated elevated roles for Discord staff. Your roles, your permissions — only when they're needed.">
-  <title>umask — Elevated permissions, only when they're needed.</title>
+  <meta name="description" content="umask gives Discord staff elevated permissions only when needed. Authenticate to receive a server role temporarily, without leaving powerful permissions assigned all the time.">
+  <title>umask — Temporary elevated permissions for Discord staff</title>
   <link rel="icon" href="/assets/favicon.png" type="image/png">
   <link rel="stylesheet" href="/style.css">
   <script src="/config.js" defer></script>
@@ -17,11 +17,11 @@
       <a class="brand" href="/" aria-label="umask home"><img src="/assets/umask-wordmark.webp" alt="umask" width="126" height="40"></a>
       <nav class="navlinks" aria-label="Main navigation">
         <a href="#how-it-works">How it works</a>
-        <a href="#permissions">Role setup</a>
+        <a href="#permissions">Permissions</a>
       </nav>
       <div class="nav-actions">
-        <a class="btn btn-small btn-quiet" data-link="support" href="#contact">Join support server <span aria-hidden="true">↗</span></a>
-        <a class="btn btn-small btn-primary" data-link="install" href="#install">Add to Discord <span aria-hidden="true">↗</span></a>
+        <a class="btn btn-small btn-quiet" data-link="support" href="#contact">Join support server <span class="btn-arrow" aria-hidden="true">↗</span></a>
+        <a class="btn btn-small btn-primary" data-link="install" href="#install">Add to Discord <span class="btn-arrow" aria-hidden="true">↗</span></a>
       </div>
     </div>
   </header>
@@ -29,44 +29,41 @@
   <main>
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-inner">
-        <p class="hero-overline">Discord / temporary staff access</p>
-        <h1 id="hero-title">Elevated permissions,<br>only when they're <span>needed.</span></h1>
-        <p class="hero-copy">umask gives staff the elevated role you choose after authentication, then removes it when their session ends. Your roles and their permissions stay under your control.</p>
+        <h1 id="hero-title">Elevated permissions for Discord staff. <span>Only when needed.</span></h1>
+        <p class="hero-copy">umask gives staff the elevated role you choose after they authenticate, then removes it when their session ends. You remain in control of the role and its permissions.</p>
         <div class="hero-buttons">
-          <a class="btn btn-primary btn-large" data-link="install" href="#install">Add to Discord <span aria-hidden="true">↗</span></a>
-          <a class="btn btn-quiet btn-large" data-link="support" href="#contact">Join support server <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-primary btn-large" data-link="install" href="#install">Add to Discord <span class="btn-arrow" aria-hidden="true">↗</span></a>
+          <a class="btn btn-quiet btn-large" data-link="support" href="#contact">Join support server <span class="btn-arrow" aria-hidden="true">↗</span></a>
         </div>
-        <p class="hero-footnote">Free to use. Guided setup. No Administrator permission required.</p>
       </div>
     </section>
 
     <section class="section" id="how-it-works" aria-labelledby="how-title">
-      <div class="container editorial-layout">
-        <div class="editorial-heading">
-          <p class="section-index">01 / HOW IT WORKS</p>
-          <h2 id="how-title">Three steps.<br>All in Discord.</h2>
-          <p>Staff can use their usual Discord permissions when they're signed in. No external dashboard.</p>
+      <div class="container content-layout">
+        <div class="section-heading">
+          <h2 id="how-title">How it works</h2>
+          <p>Setup and authentication happen entirely in Discord.</p>
         </div>
         <ol class="instruction-list">
           <li class="instruction">
-            <span class="instruction-number" aria-hidden="true">01</span>
+            <span class="instruction-number" aria-hidden="true">1</span>
             <div>
-              <h3>Owner sets up access</h3>
-              <p>Choose your staff and elevated roles with <code>/setup</code>, then issue each staff member a private code with <code>/issue</code>.</p>
+              <h3>Choose the roles</h3>
+              <p>The server owner uses <code>/setup</code> to select the permanent staff role and the elevated role.</p>
             </div>
           </li>
           <li class="instruction">
-            <span class="instruction-number" aria-hidden="true">02</span>
+            <span class="instruction-number" aria-hidden="true">2</span>
             <div>
-              <h3>Staff collect their code</h3>
-              <p>Each staff member runs <code>/receive</code> once and keeps their code somewhere safe.</p>
+              <h3>Issue a private code</h3>
+              <p>The owner runs <code>/issue</code>. Each staff member collects their phrase using <code>/receive</code> and stores it securely.</p>
             </div>
           </li>
           <li class="instruction">
-            <span class="instruction-number" aria-hidden="true">03</span>
+            <span class="instruction-number" aria-hidden="true">3</span>
             <div>
-              <h3>Sign in when needed</h3>
-              <p>Staff use <code>/authenticate</code> to receive the elevated role for a set time. It is removed automatically at expiry, or earlier with <code>/signout</code>.</p>
+              <h3>Authenticate when needed</h3>
+              <p>Staff use <code>/authenticate</code> to receive the elevated role for an allowed duration. It is removed on expiry or with <code>/signout</code>.</p>
             </div>
           </li>
         </ol>
@@ -74,32 +71,33 @@
     </section>
 
     <section class="section section-separator" id="permissions" aria-labelledby="permissions-title">
-      <div class="container editorial-layout">
-        <div class="editorial-heading">
-          <p class="section-index">02 / ROLE SETUP</p>
-          <h2 id="permissions-title">Minimum access.<br>Clear setup.</h2>
-          <p>You define the elevated role’s permissions. umask only grants and removes that role.</p>
+      <div class="container content-layout">
+        <div class="section-heading">
+          <h2 id="permissions-title">What umask needs</h2>
+          <p>Just enough access to assign the role you've configured. No changes to its permissions.</p>
         </div>
         <div class="requirements">
-          <h3>What umask needs</h3>
           <dl class="requirement-rows">
             <div class="requirement-row">
               <dt>Manage Roles</dt>
-              <dd>To grant and remove your chosen elevated role.</dd>
+              <dd>Allows umask to grant and remove your elevated role.</dd>
             </div>
             <div class="requirement-row">
-              <dt>Role position</dt>
-              <dd>Place the umask bot role directly above the elevated-permissions role. No higher is necessary.</dd>
+              <dt>A higher role position</dt>
+              <dd>Place the umask bot role directly above the elevated role in Discord's role list.</dd>
             </div>
           </dl>
-          <p class="requirements-footnote">No Administrator permission. No message-content access. umask does not need the permissions contained in the elevated role or edit its permissions.</p>
+          <p class="requirements-note">umask doesn't need Administrator, access to message content, or the permissions contained in the elevated role.</p>
         </div>
       </div>
     </section>
 
-    <div class="container small-print" aria-label="Security limitations">
-      <p>umask reduces exposure to compromised accounts while staff are signed out. It cannot protect an active elevated session or a stolen access code. Unexpected downtime may delay role removal. <a href="/privacy.html">Privacy &amp; data handling ↗</a></p>
-    </div>
+    <section class="disclaimer" aria-labelledby="disclaimer-title">
+      <div class="container disclaimer-inner">
+        <h2 id="disclaimer-title">A safeguard, not a guarantee.</h2>
+        <p>umask reduces the time staff accounts hold elevated permissions. It cannot prevent misuse during an active session or guarantee immediate role removal during an outage. <a href="/terms.html">Read the limitations</a>.</p>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer" id="contact">
@@ -107,8 +105,9 @@
       <div class="footer-brand"><a href="/" aria-label="umask home"><img src="/assets/umask-wordmark.webp" alt="umask" width="108" height="34"></a><p>© <span data-year>2026</span> umask.</p></div>
       <nav class="footer-links" aria-label="Footer navigation">
         <a href="/terms.html">Terms</a>
-        <a href="/privacy.html">Privacy</a><a href="/data-request.html">Data requests</a>
-        <a href="#contact" data-link="support">Support server ↗</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/data-request.html">Data requests</a>
+        <a href="#contact" data-link="support">Support server <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </footer>

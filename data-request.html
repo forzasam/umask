@@ -11,10 +11,9 @@
   <script src="/data-request.js" defer></script>
 </head>
 <body>
-<header class="site-header"><div class="container navrow"><a class="brand" href="/" aria-label="umask home"><img src="/assets/umask-wordmark.webp" alt="umask" width="126" height="40"></a><nav class="navlinks" aria-label="Main navigation"><a href="/#how-it-works">How it works</a><a href="/#permissions">Role setup</a></nav><div class="nav-actions"><a class="btn btn-small btn-quiet" data-link="support" href="/#contact">Join support server ↗</a><a class="btn btn-small btn-primary" data-link="install" href="/#install">Add to Discord ↗</a></div></div></header>
+<header class="site-header"><div class="container navrow"><a class="brand" href="/" aria-label="umask home"><img src="/assets/umask-wordmark.webp" alt="umask" width="126" height="40"></a><nav class="navlinks" aria-label="Main navigation"><a href="/#how-it-works">How it works</a><a href="/#permissions">Role setup</a></nav><div class="nav-actions"><a class="btn btn-small btn-quiet" data-link="support" href="/#contact">Join support server <span class="btn-arrow" aria-hidden="true">↗</span></a><a class="btn btn-small btn-primary" data-link="install" href="/#install">Add to Discord <span class="btn-arrow" aria-hidden="true">↗</span></a></div></div></header>
 <main class="container subpage">
-  <a class="info-chip" href="/privacy.html">← Privacy Policy</a>
-  <p class="section-index divider-gap">PRIVACY</p>
+  <a class="back-link" href="/privacy.html">← Privacy Policy</a>
   <h1>Request your data.</h1>
   <p class="intro">Ask about your records, or request that eligible information is deleted. Each request is reviewed by a person before any data is changed.</p>
 
@@ -45,10 +44,10 @@
     <p class="field-help">This form opens an email draft to <strong>support@umask.app</strong>. You must send the email yourself. Nothing is submitted from this website automatically.</p>
     <div id="request-result" class="request-result" role="status" hidden>
       <p>Your email draft should open. <strong>Your request has not been sent until you send the email.</strong> If your device doesn't support email drafts, copy the prepared message and send it to support@umask.app.</p>
-      <button class="btn btn-quiet" type="button" id="copy-request">Copy prepared request</button>
+      <button class="btn btn-quiet" type="button" id="copy-request">Copy prepared request</button><span id="copy-status" class="copy-status" role="status" aria-live="polite"></span>
     </div>
   </form>
-  <div class="request-alternative"><h2>Prefer Discord?</h2><p>Open a <strong>private support ticket</strong> in our support server and select a privacy or data request. Please don't post account details in public channels.</p><a data-link="support" href="/#contact" class="inline-link">Join support server ↗</a></div>
+  <div class="request-alternative"><h2>Prefer Discord?</h2><p>Open a <strong>private support ticket</strong> in our support server and select a privacy or data request. Please don't post account details in public channels.</p><a data-link="support" href="/#contact" class="inline-link">Join support server <span class="btn-arrow" aria-hidden="true">↗</span></a></div>
 </main>
 <footer class="site-footer"><div class="container footer-inner"><div class="footer-brand"><a href="/"><img src="/assets/umask-wordmark.webp" alt="umask" width="108" height="34"></a><p>© <span data-year>2026</span> umask.</p></div><nav class="footer-links"><a href="/terms.html">Terms</a><a href="/privacy.html">Privacy</a><a href="/data-request.html" aria-current="page">Data requests</a><a data-link="support" href="/#contact">Support server ↗</a></nav></div></footer>
 </body></html>

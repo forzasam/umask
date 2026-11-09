@@ -14,10 +14,6 @@
       }
     });
   }
-  const el=document.querySelector('#site-status');
-  if(el&&(!install||!support)){
-    const note=document.createElement('span');note.textContent='  ·  '+(!install?'Bot invite link is being prepared.':'Support invite is being prepared.');el.appendChild(note);
-  }
   const ready=Boolean(config.legalReady&&config.contactEmail&&config.operatorName);
   document.querySelectorAll('[data-legal-banner]').forEach(el=>{el.hidden=ready});
   document.querySelectorAll('[data-operator]').forEach(el=>{el.textContent=config.operatorName||'[Operator / organisation name — required before launch]'});
@@ -28,9 +24,13 @@
     }else{el.textContent='[Contact email — required before launch]'}
   });
   document.querySelectorAll('[data-year]').forEach(el=>{el.textContent=String(new Date().getFullYear())});
+  let toastTimer;
   function displayToast(message){
     let toast=document.querySelector('#site-toast');
-    if(!toast){toast=document.createElement('div');toast.id='site-toast';toast.setAttribute('role','status');Object.assign(toast.style,{position:'fixed',bottom:'22px',left:'50%',transform:'translateX(-50%)',zIndex:'100',padding:'12px 18px',borderRadius:'12px',background:'#242034',color:'#eee9ff',border:'1px solid #5b4e79',boxShadow:'0 15px 45px rgba(0,0,0,.3)',maxWidth:'90vw',textAlign:'center'});document.body.appendChild(toast)}
+    if(!toast){toast=document.createElement('div');toast.id='site-toast';toast.setAttribute('role','status');toast.setAttribute('aria-live','polite');document.body.appendChild(toast)}
+    clearTimeout(toastTimer);
+    toast.classList.remove('is-hiding');
     toast.textContent=message;
+    toastTimer=setTimeout(()=>{toast.classList.add('is-hiding');},3500);
   }
 })();
